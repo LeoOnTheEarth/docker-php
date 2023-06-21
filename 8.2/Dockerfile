@@ -33,6 +33,7 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/local/bin/composer && \
     apk add git && \
-    apk add rsync
+    apk add rsync && \
+    apk add openssh
 
 VOLUME ["/cache", "/root/.composer", "/root/.ssh"]
