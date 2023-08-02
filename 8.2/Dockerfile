@@ -18,6 +18,7 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
     memcached              \
     msgpack                \
     mysqli                 \
+    opcache                \
     pdo_mysql              \
     redis                  \
     soap                   \
