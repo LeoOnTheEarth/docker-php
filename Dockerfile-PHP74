@@ -1,0 +1,37 @@
+FROM php:7.4-cli-alpine
+
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+ADD files/install-composer.sh /opt/install-composer.sh
+RUN chmod +x /usr/local/bin/install-php-extensions && \
+    install-php-extensions \
+    bcmath                 \
+    calendar               \
+    enchant                \
+    exif                   \
+    gd                     \
+    gettext                \
+    gmp                    \
+    igbinary               \
+    imagick                \
+    imap                   \
+    intl                   \
+    mcrypt                 \
+    memcached              \
+    msgpack                \
+    mysqli                 \
+    opcache                \
+    pdo_mysql              \
+    redis                  \
+    soap                   \
+    sockets                \
+    tidy                   \
+    xsl                    \
+    zip                 && \
+    echo 'date.timezone="UTC"' > /usr/local/etc/php/conf.d/custom.ini && \
+    echo 'phar.readonly=off'  >> /usr/local/etc/php/conf.d/custom.ini && \
+    sh /opt/install-composer.sh && \
+    apk add git && \
+    apk add rsync && \
+    apk add openssh
+
+VOLUME ["/cache", "/root/.composer", "/root/.ssh"]
