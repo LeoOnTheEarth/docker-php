@@ -4,7 +4,9 @@ ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/do
 ADD files/install-composer.sh /opt/install-composer.sh
 RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions \
+    apcu                   \
     bcmath                 \
+    bz2                    \
     calendar               \
     enchant                \
     exif                   \
@@ -15,15 +17,21 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
     imagick                \
     imap                   \
     intl                   \
+    ldap                   \
+    luasandbox             \
+    memcache               \
     memcached              \
     msgpack                \
     mysqli                 \
     opcache                \
     pdo_mysql              \
+    pgsql                  \
     redis                  \
+    snmp                   \
     soap                   \
     sockets                \
     tidy                   \
+    xdebug                 \
     xsl                    \
     zip                 && \
     echo 'date.timezone="UTC"' > /usr/local/etc/php/conf.d/custom.ini && \
