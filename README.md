@@ -16,6 +16,15 @@ docker build --rm -t leoontheearth/php:5.6 -f Dockerfile-PHP56 .
 ```
 
 ```shell
+# Push new image to DockerHub
+docker image push leoontheearth/php:8.4
+docker image push leoontheearth/php:8.3
+docker image push leoontheearth/php:8.2
+docker image push leoontheearth/php:7.4
+docker image push leoontheearth/php:5.6
+```
+
+```shell
 # Run image
 docker run -t -i --rm leoontheearth/php:8.4 sh
 docker run -t -i --rm leoontheearth/php:8.3 sh
