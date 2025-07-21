@@ -2,6 +2,7 @@ FROM php:5.6-cli-alpine
 
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 ADD files/install-composer.sh /opt/install-composer.sh
+ADD files/install-composer22.sh /opt/install-composer22.sh
 RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions \
     apcu                   \
@@ -38,6 +39,7 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
     echo 'date.timezone="UTC"' > /usr/local/etc/php/conf.d/custom.ini && \
     echo 'phar.readonly=off'  >> /usr/local/etc/php/conf.d/custom.ini && \
     sh /opt/install-composer.sh && \
+    sh /opt/install-composer22.sh && \
     apk add git && \
     apk add rsync && \
     apk add openssh
