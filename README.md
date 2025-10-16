@@ -13,6 +13,11 @@ docker build --rm -t leoontheearth/php:8.3 -f Dockerfile-PHP83 .
 docker build --rm -t leoontheearth/php:8.2 -f Dockerfile-PHP82 .
 docker build --rm -t leoontheearth/php:7.4 -f Dockerfile-PHP74 .
 docker build --rm -t leoontheearth/php:5.6 -f Dockerfile-PHP56 .
+docker build --rm -t leoontheearth/php:8.4-fpm -f Dockerfile-PHP84-FPM .
+docker build --rm -t leoontheearth/php:8.3-fpm -f Dockerfile-PHP83-FPM .
+docker build --rm -t leoontheearth/php:8.2-fpm -f Dockerfile-PHP82-FPM .
+docker build --rm -t leoontheearth/php:7.4-fpm -f Dockerfile-PHP74-FPM .
+docker build --rm -t leoontheearth/php:5.6-fpm -f Dockerfile-PHP56-FPM .
 ```
 
 ```shell
@@ -22,6 +27,11 @@ docker image push leoontheearth/php:8.3
 docker image push leoontheearth/php:8.2
 docker image push leoontheearth/php:7.4
 docker image push leoontheearth/php:5.6
+docker image push leoontheearth/php:8.4-fpm
+docker image push leoontheearth/php:8.3-fpm
+docker image push leoontheearth/php:8.2-fpm
+docker image push leoontheearth/php:7.4-fpm
+docker image push leoontheearth/php:5.6-fpm
 ```
 
 ```shell
@@ -31,4 +41,9 @@ docker run -t -i --rm leoontheearth/php:8.3 sh
 docker run -t -i --rm leoontheearth/php:8.2 sh
 docker run -t -i --rm leoontheearth/php:7.4 sh
 docker run -t -i --rm leoontheearth/php:5.6 sh
+docker run -t -i --rm leoontheearth/php:8.4-fpm sh
+docker run -t -i --rm leoontheearth/php:8.3-fpm sh
+docker run -t -i --rm leoontheearth/php:8.2-fpm sh
+docker run -t -i --rm leoontheearth/php:7.4-fpm sh
+docker run -t -i --rm leoontheearth/php:5.6-fpm sh
 ```
